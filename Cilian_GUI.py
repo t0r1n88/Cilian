@@ -86,13 +86,13 @@ if __name__ == '__main__':
 
     tab_control = ttk.Notebook(window)
 
-    # Создаем вкладку обработки данных для Приложения 6
-    tab_report_6 = ttk.Frame(tab_control)
-    tab_control.add(tab_report_6, text='Скрипт №1')
+    # Создаем вкладку обработки данных
+    tab_report_docx = ttk.Frame(tab_control)
+    tab_control.add(tab_report_docx, text='Скрипт №1')
     tab_control.pack(expand=1, fill='both')
     # Добавляем виджеты на вкладку Создание образовательных программ
     # Создаем метку для описания назначения программы
-    lbl_hello = Label(tab_report_6,
+    lbl_hello = Label(tab_report_docx,
                       text='Центр опережающей профессиональной подготовки Республики Бурятия')
     lbl_hello.grid(column=0, row=0, padx=10, pady=25)
 
@@ -100,28 +100,28 @@ if __name__ == '__main__':
     path_to_img = resource_path('logo.png')
 
     img = PhotoImage(file=path_to_img)
-    Label(tab_report_6,
+    Label(tab_report_docx,
           image=img
           ).grid(column=1, row=0, padx=10, pady=25)
 
     # Создаем кнопку Выбрать файл с данными
-    btn_choose_data = Button(tab_report_6, text='1) Выберите файлы с данными', font=('Arial Bold', 20),
-                          command=select_files_data_xlsx
-                          )
+    btn_choose_data = Button(tab_report_docx, text='1) Выберите файлы с данными', font=('Arial Bold', 20),
+                             command=select_files_data_xlsx
+                             )
     btn_choose_data.grid(column=0, row=2, padx=10, pady=10)
 
     # Создаем кнопку для выбора папки куда будут генерироваться файлы
 
-    btn_choose_end_folder = Button(tab_report_6, text='2) Выберите конечную папку', font=('Arial Bold', 20),
-                                       command=select_end_folder
-                                       )
+    btn_choose_end_folder = Button(tab_report_docx, text='2) Выберите конечную папку', font=('Arial Bold', 20),
+                                   command=select_end_folder
+                                   )
     btn_choose_end_folder.grid(column=0, row=3, padx=10, pady=10)
 
     #Создаем кнопку обработки данных
 
-    btn_proccessing_data = Button(tab_report_6, text='3) Обработать данные', font=('Arial Bold', 20),
-                                       command=processing_data
-                                       )
+    btn_proccessing_data = Button(tab_report_docx, text='3) Обработать данные', font=('Arial Bold', 20),
+                                  command=processing_data
+                                  )
     btn_proccessing_data.grid(column=0, row=4, padx=10, pady=10)
 
     window.mainloop()
