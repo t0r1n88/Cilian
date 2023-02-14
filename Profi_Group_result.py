@@ -41,6 +41,7 @@ path_end_folder = 'ITOG_group'
 path_docx_data = 'DOCX_group'
 path_rtf = 'RTF_group'
 # Извлекаем RTF в папку RTF
+
 for dirpath, dirnames, filenames in os.walk(path_folder_data):
     for filename in filenames:
         if filename.endswith('.rtf'):
@@ -48,14 +49,10 @@ for dirpath, dirnames, filenames in os.walk(path_folder_data):
             name_test  = temp_str.split('\\')[1]
             shutil.copyfile(f'{dirpath}/{filename}', f'{path_rtf}/{name_test}.rtf')
 
-
 """
 Здесь работа Libre Office
 """
 
 
 combine_all_docx(os.listdir(path_docx_data)[0],os.listdir(path_docx_data)[1:])
-
-# for lst_docx in file_dct.values():
-#     combine_all_docx(lst_docx[0],lst_docx[1:])
 

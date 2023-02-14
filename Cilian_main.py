@@ -42,7 +42,9 @@ path_end_folder = 'ITOG'
 path_folder_data = 'IN'
 path_docx_data = 'DOCX'
 path_rtf = 'RTF'
+
 # Извлекаем RTF в папку RTF
+
 for dirpath, dirnames, filenames in os.walk(path_folder_data):
     for filename in filenames:
         if filename.endswith('.rtf'):
@@ -56,15 +58,15 @@ for dirpath, dirnames, filenames in os.walk(path_folder_data):
 """
 # Объединение
 #Создаем словарь для каждого школьника
-file_dct = dict()
+# file_dct = dict()
+# #
+# for file in os.listdir('DOCX'):
+#     temp_lst = file.split('.')[0].split('_')
+#     if temp_lst[0] not in file_dct:
+#         file_dct[temp_lst[0]] = []
+#     else:
+#         file_dct[temp_lst[0]].append(file)
 #
-for file in os.listdir('DOCX'):
-    temp_lst = file.split('.')[0].split('_')
-    if temp_lst[0] not in file_dct:
-        file_dct[temp_lst[0]] = []
-    else:
-        file_dct[temp_lst[0]].append(file)
-
-for lst_docx in file_dct.values():
-    combine_all_docx(lst_docx[0],lst_docx[1:])
+# for lst_docx in file_dct.values():
+#     combine_all_docx(lst_docx[0],lst_docx[1:])
 
